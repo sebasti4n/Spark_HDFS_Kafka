@@ -1,0 +1,46 @@
+Start hadoop starts the Hadoop DFS daemons, the namenode and datanodes. Use this before start-mapred.sh  http://localhost:9870
+http://localhost:9870/explorer.html#/kafka_stock_data
+
+start-dfs.sh 
+
+http://localhost:8088/
+start-yarn.sh
+
+Start mongo db
+mongod
+Probar en robo 3t
+
+Start zookeeper
+cd workarea/softwares/kafka_2.12-3.2.0
+sudo bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Start kafka
+sudo bin/kafka-server-start.sh config/server.properties
+
+
+Start Superset
+export FLASK_APP=superset
+cd /home/datamaking/pvenvironments
+source datamaking/bin/activate
+superset run -h 0.0.0.0 -p 8099  --with-threads --reload --debugger
+http://localhost:8099
+
+Start Mysql USER 'admin'@'%' IDENTIFIED BY 'admin'
+sudo service mysql start
+mysql -u admin -p
+database energy_1
+... create table energy (voltage  int, current double, power double, energy
+double, frecuency double, powerfactor double);
+
+Cassandra
+sqlsh
+CREATE TABLE energy_1.energy (id int PRIMARY KEY, voltage  int, current double, power double, energy double, frecuency double, powerfactor double);
+
+Start Orange Data Mining
+orange-canvas &
+
+Start Apache Zeppelin localhost:8017
+sudo systemctl start zeppelin
+sudo systemctl enable zeppelin
+sudo systemctl status zeppelin
+ 
